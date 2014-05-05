@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 public class MainActivity extends ActionBarActivity {
 
-    private int contador = 0;
+    private int incremento = 0;
     private TextView texto;
 
     @Override
@@ -42,24 +42,24 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void incrementar(View view) {
-        contador++;
+        incremento++;
 
-        texto.setText(String.valueOf(contador));
+        texto.setText(String.valueOf(incremento));
     }
 
     @Override
     protected void onSaveInstanceState(Bundle estado){
         super.onSaveInstanceState(estado);
 
-        estado.putInt("posicion", contador);
+        estado.putInt("posicion", incremento);
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle estado){
         super.onRestoreInstanceState(estado);
 
-        contador = estado.getInt("posicion");
+        incremento = estado.getInt("posicion");
 
-        texto.setText(String.valueOf(contador));
+        texto.setText(String.valueOf(incremento));
     }
 }
